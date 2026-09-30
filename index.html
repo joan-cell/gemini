@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 基础 SEO -->
+    <title>Gemini API 中文版 | Gemini 3.1 Pro / 3.8 Flash API 接口 | 免费 Gemini API Key 获取</title>
+    <meta name="description" content="2026 年专业 Gemini API 中转服务，提供最新 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite，以及 Nano Banana Pro 生图、Veo 3.1 视频、Live 语音全系列 API 接口。国内直连，1M 超长上下文，支持中文对话、代码生成、文档与多模态分析，注册即送免费额度！">
+    <meta name="keywords" content="Gemini API,Gemini 3.1 Pro,Gemini 3.8 Flash,Gemini Flash-Lite,Nano Banana Pro,Veo 3.1,Gemini API Key,Gemini中文版,Gemini API接口,免费Gemini API,Gemini API中转,Google AI API,多模态API,AI生图API,AI视频API">
+    <meta name="author" content="Gemini API 中转站">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    <link rel="canonical" href="https://quanzil.com/">
+
+    <!-- Open Graph / 微信、Facebook 分享 -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gemini API 中转站">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:url" content="https://quanzil.com/">
+    <meta property="og:title" content="【2026 年最新】Gemini API 中转站 | 免费 Gemini 3.1 Pro / 3.8 Flash API 服务">
+    <meta property="og:description" content="专业 Gemini API 中转平台，提供 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite、Nano Banana Pro、Veo 3.1 全系列模型接口。国内直连稳定快速，1M 超长上下文，支持中文对话、代码生成、多模态理解，注册即送免费额度！">
+
+    <!-- Twitter 卡片 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="【2026 年最新】Gemini API 中转站 | 免费 Gemini 3.1 Pro / 3.8 Flash API 服务">
+    <meta name="twitter:description" content="专业 Gemini API 中转平台，提供 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite、Nano Banana Pro、Veo 3.1 全系列模型接口。国内直连，1M 超长上下文，支持多模态理解，注册即送免费额度！">
+
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 结构化数据（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Gemini API 中转站",
+      "url": "https://quanzil.com/",
+      "description": "国内直连 Gemini API 中转服务，支持最新 Gemini 3.1 Pro / 3.8 Flash / 3.5 Flash-Lite / Nano Banana Pro / Veo 3.1。",
+      "inLanguage": "zh-CN"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Gemini API 中转服务",
+      "description": "提供最新 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite 及 Nano Banana Pro、Veo 3.1 的 API 中转接入，国内直连、1M 上下文、超值定价。",
+      "brand": { "@type": "Brand", "name": "Gemini API 中转站" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://quanzil.com/",
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "如何获取免费的 Gemini API Key？",
+          "acceptedAnswer": { "@type": "Answer", "text": "访问 https://quanzil.com 免费注册即可获取 API 密钥并领取免费额度。" }
+        },
+        {
+          "@type": "Question",
+          "name": "支持哪些 Gemini 模型？",
+          "acceptedAnswer": { "@type": "Answer", "text": "支持最新的 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite 文本模型，以及 Nano Banana Pro 生图、Veo 3.1 视频、Live 实时语音等多模态模型。" }
+        },
+        {
+          "@type": "Question",
+          "name": "Gemini 支持多长的上下文？",
+          "acceptedAnswer": { "@type": "Answer", "text": "Gemini 3 系列支持高达 100 万 token 的超长上下文，可一次处理整本书、超长代码库或数小时音视频。" }
+        },
+        {
+          "@type": "Question",
+          "name": "如何从官方 API 迁移？",
+          "acceptedAnswer": { "@type": "Answer", "text": "兼容官方 Gemini 接口与 OpenAI 兼容层，只需将 base_url 修改为 https://quanzil.com 即可无缝迁移。" }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #f7f9fc;
+            --surface: #ffffff;
+            --ink: #1a1c22;
+            --ink-dim: #5b616e;
+            --line: #e6eaf2;
+            --g-blue: #4285f4;
+            --g-red: #ea4335;
+            --g-yellow: #fbbc05;
+            --g-green: #34a853;
+            --g-purple: #9b72f9;
+            --radius: 20px;
+            --shadow-sm: 0 4px 16px rgba(20, 30, 60, 0.06);
+            --shadow-md: 0 16px 40px rgba(20, 30, 60, 0.10);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Google Sans", "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+        .grad-text {
+            background: linear-gradient(100deg, var(--g-blue), var(--g-purple) 40%, var(--g-red) 70%, var(--g-yellow));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+
+        /* Header */
+        header {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line);
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.2rem; }
+        .logo-star {
+            width: 32px; height: 32px;
+            background: conic-gradient(from 180deg, var(--g-blue), var(--g-purple), var(--g-red), var(--g-yellow), var(--g-blue));
+            -webkit-mask: radial-gradient(circle at 50% 50%, transparent 8%, #000 9%) ,
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12C7 10 11 6 12 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12C7 10 11 6 12 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--ink-dim); font-size: 0.95rem; transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .btn { display: inline-block; padding: 11px 24px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; transition: transform .2s, box-shadow .2s; }
+        .btn-primary { background: var(--g-blue); color: #fff; box-shadow: 0 8px 22px rgba(66,133,244,0.35); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(66,133,244,0.45); }
+        .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+        .btn-ghost:hover { border-color: var(--g-blue); }
+        @media (max-width: 760px) { .nav-links { display: none; } }
+
+        /* Hero */
+        .hero { position: relative; text-align: center; padding: 96px 0 72px; overflow: hidden; }
+        .hero::before {
+            content: ""; position: absolute; inset: -20% -10% auto; height: 520px; z-index: 0;
+            background:
+                radial-gradient(420px circle at 20% 30%, rgba(66,133,244,0.16), transparent 60%),
+                radial-gradient(420px circle at 80% 20%, rgba(155,114,249,0.16), transparent 60%),
+                radial-gradient(420px circle at 55% 70%, rgba(52,168,83,0.12), transparent 60%);
+        }
+        .hero > * { position: relative; z-index: 1; }
+        .pill {
+            display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px;
+            background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+            font-size: 0.85rem; color: var(--ink-dim); margin-bottom: 26px;
+        }
+        .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--g-green); box-shadow: 0 0 10px var(--g-green); }
+        .hero h1 { font-size: clamp(2.4rem, 6vw, 4.1rem); font-weight: 800; line-height: 1.12; margin-bottom: 22px; }
+        .hero p.sub { font-size: 1.15rem; color: var(--ink-dim); max-width: 680px; margin: 0 auto 36px; }
+        .hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px; }
+        .chip { padding: 8px 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: 0.9rem; color: var(--ink-dim); box-shadow: var(--shadow-sm); }
+        .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        section { padding: 76px 0; }
+        .section-head { text-align: center; margin-bottom: 50px; }
+        .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 12px; }
+        .section-head p { color: var(--ink-dim); font-size: 1.05rem; }
+
+        /* Models */
+        .models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+        .model-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; box-shadow: var(--shadow-sm); transition: transform .25s, box-shadow .25s; overflow: hidden; }
+        .model-card::after { content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 100%; background: linear-gradient(90deg, var(--g-blue), var(--g-purple), var(--g-red), var(--g-yellow)); }
+        .model-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .model-tag { position: absolute; top: 20px; right: 20px; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(66,133,244,0.12); color: var(--g-blue); }
+        .model-card h3 { font-size: 1.35rem; margin-bottom: 6px; }
+        .model-id { font-family: Consolas, monospace; font-size: 0.78rem; color: var(--g-purple); background: rgba(155,114,249,0.1); padding: 3px 8px; border-radius: 6px; display: inline-block; margin-bottom: 16px; }
+        .model-card .desc { color: var(--ink-dim); font-size: 0.94rem; margin-bottom: 16px; min-height: 68px; }
+        .model-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+        .model-card li { font-size: 0.9rem; display: flex; gap: 10px; align-items: flex-start; }
+        .model-card li::before { content: "✦"; color: var(--g-blue); }
+        .price-pill { display: inline-block; padding: 6px 14px; border-radius: 10px; background: rgba(52,168,83,0.12); color: var(--g-green); font-weight: 700; font-size: 0.88rem; }
+
+        /* Capabilities (multimodal) */
+        .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .cap { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); transition: transform .25s; }
+        .cap:hover { transform: translateY(-4px); }
+        .cap .ico { font-size: 1.7rem; width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 14px; }
+        .cap:nth-child(1) .ico { background: rgba(66,133,244,0.12); }
+        .cap:nth-child(2) .ico { background: rgba(234,67,53,0.12); }
+        .cap:nth-child(3) .ico { background: rgba(251,188,5,0.14); }
+        .cap:nth-child(4) .ico { background: rgba(52,168,83,0.12); }
+        .cap:nth-child(5) .ico { background: rgba(155,114,249,0.14); }
+        .cap:nth-child(6) .ico { background: rgba(66,133,244,0.12); }
+        .cap h4 { font-size: 1.12rem; margin-bottom: 8px; }
+        .cap p { color: var(--ink-dim); font-size: 0.92rem; }
+
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); }
+        .feature .ico { font-size: 1.6rem; margin-bottom: 12px; }
+        .feature h4 { font-size: 1.12rem; margin-bottom: 8px; }
+        .feature p { color: var(--ink-dim); font-size: 0.92rem; }
+
+        /* Quickstart */
+        .quickstart { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; }
+        @media (max-width: 880px) { .quickstart { grid-template-columns: 1fr; } }
+        .code-block { background: #0d1117; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+        .code-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #1e2530; }
+        .code-head .dots { display: flex; gap: 7px; }
+        .code-head .dots span { width: 12px; height: 12px; border-radius: 50%; }
+        .dots span:nth-child(1){background:#ff5f56}.dots span:nth-child(2){background:#ffbd2e}.dots span:nth-child(3){background:#27c93f}
+        .code-head .fname { font-size: 0.82rem; color: #8b949e; }
+        .copy-btn { background: none; border: 1px solid #30363d; color: #8b949e; padding: 4px 12px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; transition: .2s; }
+        .copy-btn:hover { color: #fff; border-color: var(--g-blue); }
+        pre { padding: 22px; overflow-x: auto; font-size: 0.86rem; line-height: 1.7; color: #c9d1d9; }
+        code { font-family: Consolas, "SFMono-Regular", monospace; }
+        .tok-c { color: #8b949e; } .tok-s { color: #a5d6ff; } .tok-k { color: #ff7b72; } .tok-f { color: #d2a8ff; }
+
+        .tabs { display: flex; gap: 6px; padding: 8px 12px 0; }
+        .tab { font-size: 0.8rem; color: #8b949e; padding: 6px 14px; border-radius: 8px 8px 0 0; cursor: pointer; }
+        .tab.active { color: #fff; background: #161b22; }
+
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
+        .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; text-align: center; box-shadow: var(--shadow-sm); }
+        .stat .num { font-size: 2rem; font-weight: 800; }
+        .stat .lbl { color: var(--ink-dim); font-size: 0.86rem; margin-top: 4px; }
+
+        /* CTA */
+        .cta-banner { text-align: center; border-radius: 26px; padding: 60px 30px; color: #fff;
+            background: linear-gradient(120deg, var(--g-blue), var(--g-purple) 55%, var(--g-red)); box-shadow: var(--shadow-md); }
+        .cta-banner h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 14px; }
+        .cta-banner p { opacity: .92; margin-bottom: 28px; }
+        .cta-banner .btn-white { background: #fff; color: var(--g-blue); }
+        .cta-banner .btn-white:hover { transform: translateY(-2px); }
+        .cta-banner a.inline { color: #fff; text-decoration: underline; }
+
+        footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 76px; text-align: center; color: var(--ink-dim); font-size: 0.9rem; }
+        footer a.link { color: var(--g-blue); }
+
+        .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+        .fade-up.in { opacity: 1; transform: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="logo"><span class="logo-star"></span> Gemini API 中转站</div>
+            <nav class="nav-links">
+                <a href="#models">模型系列</a>
+                <a href="#capabilities">多模态能力</a>
+                <a href="#features">服务优势</a>
+                <a href="#quickstart">快速开始</a>
+            </nav>
+            <a class="btn btn-primary" href="https://quanzil.com" target="_blank" rel="noopener">获取 API Key</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="pill"><span class="dot"></span> 已同步最新 Gemini 3 系列模型</div>
+                <h1>接入 <span class="grad-text">最新一代 Gemini</span><br>解锁全模态 AI 能力</h1>
+                <p class="sub">国内直连中转服务，全面覆盖 Gemini 3.1 Pro、3.8 Flash、3.5 Flash-Lite 文本模型，以及 Nano Banana Pro 生图、Veo 3.1 视频、Live 实时语音。100 万 token 超长上下文，一次读懂整本书、整个代码库。</p>
+                <div class="hero-tags">
+                    <span class="chip">🚀 国内直连</span>
+                    <span class="chip">🧠 1M 超长上下文</span>
+                    <span class="chip">🖼️ 原生多模态</span>
+                    <span class="chip">🎬 文生视频</span>
+                    <span class="chip">🔒 加密稳定</span>
+                    <span class="chip">💰 官方价 5 折起</span>
+                </div>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="https://quanzil.com" target="_blank" rel="noopener">免费注册领取额度</a>
+                    <a class="btn btn-ghost" href="#models">查看模型对比</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models -->
+        <section id="models" class="container">
+            <div class="section-head">
+                <h2>Gemini 模型系列</h2>
+                <p>从旗舰推理到极速轻量，覆盖文本、生图与视频</p>
+            </div>
+            <div class="models-grid">
+                <div class="model-card fade-up">
+                    <span class="model-tag">旗舰推理</span>
+                    <h3>Gemini 3.1 Pro</h3>
+                    <div class="model-id">gemini-3.1-pro-preview</div>
+                    <p class="desc">最先进的思考型模型，具备顶级推理、复杂问题求解与 vibe coding 能力，适合最具挑战的任务。</p>
+                    <ul>
+                        <li>100 万 token 超长上下文</li>
+                        <li>深度思考 + 多模态理解</li>
+                        <li>强大的 Agent 与代码能力</li>
+                        <li>复杂文档与长视频分析</li>
+                    </ul>
+                    <span class="price-pill">比官方低约 30%</span>
+                </div>
+
+                <div class="model-card fade-up">
+                    <span class="model-tag">最强 Flash</span>
+                    <h3>Gemini 3.8 Flash</h3>
+                    <div class="model-id">gemini-3.8-flash</div>
+                    <p class="desc">最智能的 Flash 模型，为长程软件工程、自主 Agent 与复杂企业工作流打造，速度与智能兼得。</p>
+                    <ul>
+                        <li>100 万 token 上下文</li>
+                        <li>快速响应 + 可调思考预算</li>
+                        <li>原生工具调用</li>
+                        <li>高吞吐、低延迟</li>
+                    </ul>
+                    <span class="price-pill">比官方低约 40%</span>
+                </div>
+
+                <div class="model-card fade-up">
+                    <span class="model-tag">极速轻量</span>
+                    <h3>Gemini 3.5 Flash-Lite</h3>
+                    <div class="model-id">gemini-3.5-flash-lite</div>
+                    <p class="desc">最快、最具成本效益的模型，为高频、高并发的轻量任务而生，性价比之王。</p>
+                    <ul>
+                        <li>超低延迟响应</li>
+                        <li>成本最优，适合规模化</li>
+                        <li>多模态输入支持</li>
+                        <li>文本摘要与分类</li>
+                    </ul>
+                    <span class="price-pill">比官方低约 50%</span>
+                </div>
+
+                <div class="model-card fade-up">
+                    <span class="model-tag">原生生图</span>
+                    <h3>Nano Banana Pro</h3>
+                    <div class="model-id">gemini-3-pro-image</div>
+                    <p class="desc">带推理内核的专业级设计引擎，可生成 4K 影棚级画质、复杂排版与精准文字渲染的图像。</p>
+                    <ul>
+                        <li>原生图像生成与编辑</li>
+                        <li>4K 高清 + 精准文字</li>
+                        <li>复杂布局与上下文理解</li>
+                        <li>另有 Nano Banana 2 高速版</li>
+                    </ul>
+                    <span class="price-pill">按张计费 · 超值</span>
+                </div>
+            </div>
+            <p style="text-align:center;color:var(--ink-dim);margin-top:22px;font-size:0.92rem">同时支持 <strong>Veo 3.1</strong> 电影级文生视频、<strong>Gemini 3.8 Live</strong> 实时语音对话、<strong>Gemini 3.5 Transcribe</strong> 语音转写与 <strong>Gemini Embedding 2</strong> 多模态向量。</p>
+        </section>
+
+        <!-- Capabilities -->
+        <section id="capabilities" style="background:linear-gradient(180deg,#ffffff,#f2f5fb);">
+            <div class="container">
+                <div class="section-head">
+                    <h2>原生全模态能力</h2>
+                    <p>一个 API，同时理解与生成文本、图像、音频和视频</p>
+                </div>
+                <div class="cap-grid">
+                    <div class="cap fade-up"><div class="ico">📝</div><h4>文本与代码</h4><p>顶级的推理、写作与代码生成能力，支持结构化输出与函数调用，轻松驱动复杂业务逻辑。</p></div>
+                    <div class="cap fade-up"><div class="ico">🖼️</div><h4>图像理解与生成</h4><p>看懂图表、截图、手写稿，并可通过 Nano Banana Pro 生成与编辑 4K 高清图像。</p></div>
+                    <div class="cap fade-up"><div class="ico">🎬</div><h4>视频理解与创作</h4><p>解析长视频内容并总结要点，Veo 3.1 更可生成带原生音效的电影级短片。</p></div>
+                    <div class="cap fade-up"><div class="ico">🔊</div><h4>语音与音频</h4><p>Live 实时语音对话、130+ 语言的高保真 TTS，以及带说话人分离的语音转写。</p></div>
+                    <div class="cap fade-up"><div class="ico">🧩</div><h4>Agent 与工具</h4><p>内置 Google 搜索、代码执行、URL 上下文、Computer Use 等工具，构建自主智能体。</p></div>
+                    <div class="cap fade-up"><div class="ico">📚</div><h4>百万级长上下文</h4><p>1M token 上下文一次装下整本书、超长代码库或数小时会议记录，配合上下文缓存更省钱。</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="container">
+            <div class="section-head">
+                <h2>为什么选择我们的中转服务</h2>
+                <p>专为中国开发者打造的 Gemini API 接入方案</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature fade-up"><div class="ico">🌐</div><h4>国内直连访问</h4><p>无需科学上网，直接调用 Gemini API，多线路优化延迟低至 30ms，稳定可靠。</p></div>
+                <div class="feature fade-up"><div class="ico">⚡</div><h4>智能负载均衡</h4><p>多区域节点智能调度与故障自动切换，高并发下依旧保持超快响应。</p></div>
+                <div class="feature fade-up"><div class="ico">🔒</div><h4>企业级安全</h4><p>全链路端到端加密传输，绝不存储任何请求与对话数据，隐私安全有保障。</p></div>
+                <div class="feature fade-up"><div class="ico">💰</div><h4>透明超值定价</h4><p>相比官方节省 30%-50% 成本，支持人民币付款，按量计费更灵活。</p></div>
+                <div class="feature fade-up"><div class="ico">🛠️</div><h4>双协议兼容</h4><p>同时兼容官方 Gemini SDK 与 OpenAI 兼容接口，改一行 base_url 即可迁移。</p></div>
+                <div class="feature fade-up"><div class="ico">📞</div><h4>7×24 中文支持</h4><p>专业工程团队全天候在线，快速响应并解决你的一切集成问题。</p></div>
+            </div>
+        </section>
+
+        <!-- Quickstart -->
+        <section id="quickstart" class="container">
+            <div class="section-head">
+                <h2>快速开始</h2>
+                <p>几分钟内将最新 Gemini 模型集成到你的应用</p>
+            </div>
+            <div class="quickstart">
+                <div class="code-block fade-up">
+                    <div class="tabs">
+                        <span class="tab active" data-lang="py" onclick="switchTab('py')">Python</span>
+                        <span class="tab" data-lang="js" onclick="switchTab('js')">Node.js</span>
+                        <span class="tab" data-lang="curl" onclick="switchTab('curl')">cURL</span>
+                    </div>
+                    <div class="code-head">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <span class="fname" id="fname">quickstart.py</span>
+                        <button class="copy-btn" onclick="copyCode()">复制代码</button>
+                    </div>
+<pre id="code-py"><code><span class="tok-c"># 安装依赖: pip install google-genai</span>
+<span class="tok-k">from</span> google <span class="tok-k">import</span> genai
+
+<span class="tok-c"># 仅需将 base_url 指向中转站</span>
+client = genai.<span class="tok-f">Client</span>(
+    api_key=<span class="tok-s">"your_api_key"</span>,
+    http_options={<span class="tok-s">"base_url"</span>: <span class="tok-s">"https://quanzil.com"</span>}
+)
+
+response = client.models.<span class="tok-f">generate_content</span>(
+    model=<span class="tok-s">"gemini-3.1-pro-preview"</span>,
+    contents=<span class="tok-s">"请帮我写一个 Python 函数来计算斐波那契数列"</span>
+)
+<span class="tok-f">print</span>(response.text)</code></pre>
+<pre id="code-js" style="display:none"><code><span class="tok-c">// 安装依赖: npm install @google/genai</span>
+<span class="tok-k">import</span> { GoogleGenAI } <span class="tok-k">from</span> <span class="tok-s">"@google/genai"</span>;
+
+<span class="tok-k">const</span> ai = <span class="tok-k">new</span> <span class="tok-f">GoogleGenAI</span>({
+  apiKey: <span class="tok-s">"your_api_key"</span>,
+  httpOptions: { baseUrl: <span class="tok-s">"https://quanzil.com"</span> }
+});
+
+<span class="tok-k">const</span> res = <span class="tok-k">await</span> ai.models.<span class="tok-f">generateContent</span>({
+  model: <span class="tok-s">"gemini-3.8-flash"</span>,
+  contents: <span class="tok-s">"用一句话介绍一下量子计算"</span>
+});
+console.<span class="tok-f">log</span>(res.text);</code></pre>
+<pre id="code-curl" style="display:none"><code><span class="tok-c"># 通过中转站直接调用</span>
+curl <span class="tok-s">"https://quanzil.com/v1beta/models/gemini-3.8-flash:generateContent"</span> \
+  -H <span class="tok-s">"x-goog-api-key: your_api_key"</span> \
+  -H <span class="tok-s">"Content-Type: application/json"</span> \
+  -d <span class="tok-s">'{
+    "contents": [{ "parts": [{ "text": "你好，Gemini！" }] }]
+  }'</span></code></pre>
+                </div>
+                <div class="stats fade-up">
+                    <div class="stat"><div class="num grad-text">30ms</div><div class="lbl">平均响应延迟</div></div>
+                    <div class="stat"><div class="num grad-text">99.9%</div><div class="lbl">服务可用性</div></div>
+                    <div class="stat"><div class="num grad-text">1M</div><div class="lbl">最大上下文</div></div>
+                    <div class="stat"><div class="num grad-text">24/7</div><div class="lbl">中文技术支持</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="cta-banner fade-up">
+                <h2>准备好接入最新 Gemini 了吗？</h2>
+                <p>访问 <a class="inline" href="https://quanzil.com" target="_blank" rel="noopener">https://quanzil.com</a> 免费注册并获取你的 API 密钥</p>
+                <a class="btn btn-white" href="https://quanzil.com" target="_blank" rel="noopener">立即免费开始</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>专业的 Gemini API 中转服务 · 让全模态 AI 开发更简单</p>
+            <p style="margin-top:8px">官网：<a class="link" href="https://quanzil.com" target="_blank" rel="noopener">quanzil.com</a> · 最后更新：2026-09-30</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(lang) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.lang === lang));
+            ['py','js','curl'].forEach(l => {
+                document.getElementById('code-' + l).style.display = (l === lang) ? 'block' : 'none';
+            });
+            document.getElementById('fname').innerText = { py:'quickstart.py', js:'quickstart.mjs', curl:'request.sh' }[lang];
+        }
+        function copyCode() {
+            const active = document.querySelector('.tab.active').dataset.lang;
+            const text = document.getElementById('code-' + active).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const old = btn.innerText;
+                btn.innerText = '已复制 ✓';
+                setTimeout(() => btn.innerText = old, 1600);
+            });
+        }
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-up').forEach((el, i) => {
+            el.style.transitionDelay = (i % 4 * 0.08) + 's';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>
